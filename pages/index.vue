@@ -80,14 +80,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Vue from "vue";
+import Logo from "~/components/Logo.vue";
+import VuetifyLogo from "~/components/VuetifyLogo.vue";
 
 export default Vue.extend({
   components: {
     Logo,
     VuetifyLogo
   }
-})
+});
 </script>
