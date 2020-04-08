@@ -7,12 +7,15 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import { productsData } from "~/data/sample";
+import axios from 'axios';
 export default Vue.extend({
-  data() {
-    return {
-      products: productsData
-    };
-  }
+  asyncData() {
+    return axios.get('https://localhost:3001/api/product/list')
+                .then(response => {
+                  return {
+                    products: response.data
+                  }
+                })
+  },
 });
 </script>
