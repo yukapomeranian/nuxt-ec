@@ -1,6 +1,7 @@
 // tsconfig.json
 {
     "compilerOptions": {
+      "experimentalDecorators": true,
       "target": "es2018",
       "module": "esnext",
       "moduleResolution": "node",
@@ -25,8 +26,9 @@
       },
       "types": [
         "@types/node",
+        "@nuxtjs/axios",
         "@nuxt/types",
-        "vuetify"
+        "vuetify",
       ]
     },
     "exclude": [
