@@ -88,7 +88,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data () {
     return {
@@ -105,6 +105,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Product',
+          to: '/product'
         }
       ],
       miniVariant: false,
