@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.2",
+    "@nuxtjs/axios": "^5.9.7",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "jest": "^24.1.0",
-    "vue-jest": "^4.0.0-0"
+    "vue-jest": "^4.0.0-0",
+    "vuex-module-decorators": "^0.16.1"
   }
 }

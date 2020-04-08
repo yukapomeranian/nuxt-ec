@@ -30,6 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    "@/plugins/axios-accessor"
   ],
   /*
   ** Nuxt.js dev-modules
@@ -42,6 +43,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    "@nuxtjs/axios"
   ],
   /*
   ** vuetify module configuration
@@ -74,5 +76,11 @@ export default {
     /* extend(config: any, ctx: any) {
      }
     */
+  },
+  typescript: {
+    typeCheck: {
+      eslint: true
+    },
+    ignoreNotFoundWarnings: true
   }
 };

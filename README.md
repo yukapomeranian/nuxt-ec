@@ -1,6 +1,13 @@
 # nuxt-ec
 
-> My super Nuxt.js project
+sample EC
+with
+- Nuxt.js
+- Vuex (vuex-module-decorator)
+- Vuetify
+- TypeScript
+- OptionsAPI (Vue)
+- ESLint
 
 ## Build Setup
 
