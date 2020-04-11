@@ -11,7 +11,7 @@ async function getProducts(): Promise<Product[]> {
   return productsResponse.map(mapToProduct);
 }
 async function getProduct(id: string): Promise<Product> {
-  const productResponse = await $axios.$get<ProductResponse>("/api/product/${id}");
+  const productResponse = await $axios.$get<ProductResponse>(`/api/product/${id}`);
   return mapToProduct(productResponse);
 }
 async function postProduct(productForm: ProductForm): Promise<Product> {
