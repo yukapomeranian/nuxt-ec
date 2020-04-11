@@ -7,19 +7,19 @@ export const productApi = {
   delete: deleteProduct
 };
 async function getProducts(): Promise<Product[]> {
-  const productsResponse = await $axios.$get<ProductResponse[]>("/api/product");
+  const productsResponse = await $axios.$get<ProductResponse[]>("/api/product/all");
   return productsResponse.map(mapToProduct);
 }
 async function getProduct(id: string): Promise<Product> {
-  const productResponse = await $axios.$get<ProductResponse>(`/product/${id}`);
+  const productResponse = await $axios.$get<ProductResponse>("/api/product/${id}");
   return mapToProduct(productResponse);
 }
 async function postProduct(productForm: ProductForm): Promise<Product> {
-  const productResponse = await $axios.$post<ProductResponse>("/product/new", productForm);
+  const productResponse = await $axios.$post<ProductResponse>("/api/product/new", productForm);
   return mapToProduct(productResponse);
 }
 async function deleteProduct(id: string): Promise<boolean> {
-  const { status } = await $axios.delete<ProductResponse>(`/product/delete/${id}`);
+  const { status } = await $axios.delete<ProductResponse>(`/api/product/delete/${id}`);
   return status === 204;
 }
 function mapToProduct(response: ProductResponse): Product {
