@@ -11,7 +11,7 @@ module.exports = {
     "^.+\\.ts$": "ts-jest",
     ".*\\.(vue)$": "vue-jest"
   },
-  collectCoverage: true,
+  collectCoverage: true
   // collectCoverageFrom: [
   //  "<rootDir>/components/**/*.vue",
   //  "<rootDir>/pages/**/*.vue"

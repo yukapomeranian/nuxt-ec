@@ -11,7 +11,7 @@
     <div class="group">
       <InputText
         v-model="form.nameForm"
-        name="name"
+        name="productName"
         label="商品名"
         placeholder="John Doe"
         validation="nameValidation"
@@ -103,11 +103,9 @@ export default Vue.extend({
       console.log("priceErrorMessage()");
       if (this.errors.priceError) {
         return "価格を入力してください。";
-      }
-      else if(!this.form.priceForm.match("^[0-9]{0,5}$")) {
+      } else if (!this.form.priceForm.match("^[0-9]{0,5}$")) {
         return "5桁以内の半角数字を入力してください。";
-      }
-      else {
+      } else {
         return "";
       }
     }
