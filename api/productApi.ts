@@ -10,7 +10,7 @@ async function getProducts(): Promise<Product[]> {
   console.log("getProducts");
   // https://script.google.com/macros/s/AKfycbx-4rPWGU4Ce8vbNXTQFpALNhzN3LVHq5B56f-0cmPv41Bhp4Y/exec?&sheetname=products
   const productsResponse = await $axios.$get<ProductResponse[]>(
-    "/macros/s/AKfycbx-4rPWGU4Ce8vbNXTQFpALNhzN3LVHq5B56f-0cmPv41Bhp4Y/exec?&sheetname=products");
+    "https://script.google.com/macros/s/AKfycbx-4rPWGU4Ce8vbNXTQFpALNhzN3LVHq5B56f-0cmPv41Bhp4Y/exec?&sheetname=products");
   console.log(`productsResponse=${JSON.stringify(productsResponse)}`);
   return productsResponse.map(mapToProduct);
 }

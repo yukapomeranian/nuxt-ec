@@ -43,8 +43,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/proxy"
+    "@nuxtjs/axios"
   ],
   /*
   ** vuetify module configuration
@@ -83,16 +82,5 @@ export default {
       eslint: true
     },
     ignoreNotFoundWarnings: true
-  },
-  axios: {
-    prefix: "/api/"
-  },
-  proxy: {
-    "/api/": {
-      target: "https://script.google.com/",
-      pathRewrite: {
-        "^/api/": "/"
-      }
-    }
   }
 };
