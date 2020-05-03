@@ -7,7 +7,11 @@ export const productApi = {
   delete: deleteProduct
 };
 async function getProducts(): Promise<Product[]> {
-  const productsResponse = await $axios.$get<ProductResponse[]>("/api/product/all");
+  console.log("getProducts");
+  // https://script.google.com/macros/s/AKfycbx-4rPWGU4Ce8vbNXTQFpALNhzN3LVHq5B56f-0cmPv41Bhp4Y/exec?&sheetname=products
+  const productsResponse = await $axios.$get<ProductResponse[]>(
+    "https://script.google.com/macros/s/AKfycbx-4rPWGU4Ce8vbNXTQFpALNhzN3LVHq5B56f-0cmPv41Bhp4Y/exec?&sheetname=products");
+  console.log(`productsResponse=${JSON.stringify(productsResponse)}`);
   return productsResponse.map(mapToProduct);
 }
 async function getProduct(id: string): Promise<Product> {
@@ -24,8 +28,8 @@ async function deleteProduct(id: string): Promise<boolean> {
 }
 function mapToProduct(response: ProductResponse): Product {
   return {
-    id: response.idResponse,
-    name: response.nameResponse,
-    price: response.priceResponse
+    id: response.id,
+    name: response.name,
+    price: response.price
   };
 }

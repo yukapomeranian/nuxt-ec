@@ -30,7 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    "@/plugins/axios-accessor"
+    { src: "@/plugins/axios-accessor" }
   ],
   /*
   ** Nuxt.js dev-modules
