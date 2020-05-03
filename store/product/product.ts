@@ -30,7 +30,7 @@ export default class ProductsStore extends VuexModule {
         this.products = this.products.filter(product => product.id !== id);
       }
 
-      @Action({ commit: "setProducts" })
+      @Action({ commit: "setProducts", rawError: true })
       public fetchMany(): Promise<Product[]> {
         if (this.allProducts.length > 0) {
           return Promise.resolve([]);

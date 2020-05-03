@@ -12,6 +12,10 @@ export { $axios };
 
 export const accessor: Plugin = ({ $axios }): void => {
   initializeAxios($axios);
+
+  $axios.onResponse(() => {
+    $axios.setHeader("Access-Control-Allow-Origin", "https://script.google.com/");
+  });
 };
 
 export default accessor;

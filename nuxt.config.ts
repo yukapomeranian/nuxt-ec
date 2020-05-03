@@ -30,7 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    "@/plugins/axios-accessor"
+    { src: "@/plugins/axios-accessor" }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -43,7 +43,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/proxy"
   ],
   /*
   ** vuetify module configuration
@@ -82,5 +83,16 @@ export default {
       eslint: true
     },
     ignoreNotFoundWarnings: true
+  },
+  axios: {
+    prefix: "/api/"
+  },
+  proxy: {
+    "/api/": {
+      target: "https://script.google.com/",
+      pathRewrite: {
+        "^/api/": "/"
+      }
+    }
   }
 };

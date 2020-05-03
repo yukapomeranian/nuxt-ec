@@ -8,9 +8,9 @@ export interface ProductForm {
     priceForm: string;
 }
 export interface ProductResponse {
-    idResponse: string;
-    nameResponse: string;
-    priceResponse: number;
+    id: string;
+    name: string;
+    price: number;
 }
 
 // export { Product, ProductForm, ProductResponse };
