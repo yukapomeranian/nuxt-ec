@@ -12,14 +12,24 @@ import { productsStore } from "~/store/product/product-accessor";
 // import { productsData } from "../../data/sample";
 
 export default Vue.extend({
+  async fetch() {
+    // fetchはサーバサイドでのみ動いてる
+    // asyncだと、明示的に返り値を指定しなくてもPromiseがreturnされる。
+    console.log("fetch()");
+    await productsStore.fetchMany();
+  },
   computed: {
     productItems(): Product[] {
       // return productsData;
+      console.log("computed productItems()");
+      console.log(`aaa=${productsStore.allProducts}`);
       return productsStore.allProducts;
     }
   },
   mounted() {
-    productsStore.fetchMany();
+    // mountedはクライアントサイドでのみ動いてる
+    console.log("mounted()");
+    // productsStore.fetchMany();
   }
 });
 </script>

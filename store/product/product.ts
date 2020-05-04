@@ -31,11 +31,11 @@ export default class ProductsStore extends VuexModule {
       }
 
       @Action({ commit: "setProducts", rawError: true })
-      public fetchMany(): Promise<Product[]> {
+      public async fetchMany(): Promise<Product[]> {
         if (this.allProducts.length > 0) {
-          return Promise.resolve([]);
+          return await Promise.resolve([]);
         }
-        return productApi.list();
+        return await productApi.list();
       }
 
       @Action({ commit: "addProduct" })
@@ -55,7 +55,7 @@ export default class ProductsStore extends VuexModule {
       }
 
       public get allProducts(): Product[] {
-        console.log("AA");
+        console.log("get allProducts()");
         return this.products;
       }
 
